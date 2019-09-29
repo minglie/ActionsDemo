@@ -10,5 +10,7 @@ jobs:
           - 8080:80
     steps:
     - uses: actions/checkout@v1
-    - run: |
-        echo ${{ secrets.MYSECRET }}
+    - env:
+        MYSECRET: ${{ secrets.MYSECRET }}
+      run: |
+        echo $MYSECRET
