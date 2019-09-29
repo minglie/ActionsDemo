@@ -1,17 +1,11 @@
-name: CI
-
+name: MYCI
 on: [push]
-
 jobs:
-  build:
-
+  job1:
     runs-on: ubuntu-latest
-    
+    container:
+      image: node:8
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - run: |
+        node -v
