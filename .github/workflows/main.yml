@@ -3,8 +3,6 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
-    container:
-      image: node:8
     services:
       nginx:
         image: nginx
