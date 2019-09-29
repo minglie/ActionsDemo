@@ -5,7 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:8
+    services:
+      nginx:
+        image: nginx
+        ports:
+          - 8080:80
     steps:
     - uses: actions/checkout@v1
     - run: |
         node -v
+        curl localhost:8080
