@@ -3,6 +3,8 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
+    container:
+      image: node:8
     services:
       nginx:
         image: nginx
@@ -10,7 +12,8 @@ jobs:
           - 8080:80
     steps:
     - uses: actions/checkout@v1
-    - env:
-        MYSECRET: ${{ secrets.MYSECRET }}
-      run: |
-        echo $MYSECRET
+    - run: |
+        echo $pwd
+        whereis node
+        which node
+        sh -c 'ifconfig'
