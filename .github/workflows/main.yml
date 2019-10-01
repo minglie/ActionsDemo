@@ -13,7 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: |
-        echo $pwd
+        pwd
         whereis node
-        which node
-        sh -c 'ifconfig'
+        uname -a
