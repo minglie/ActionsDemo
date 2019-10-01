@@ -14,7 +14,9 @@ jobs:
     - uses: actions/checkout@v1
     - run: |
         pwd
-        whereis node
+        apk add curl
         uname -a
         ls -l /usr/local/bin
         ls -l /usr/bin
+        curl nginx      
+        
